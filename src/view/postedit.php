@@ -3,6 +3,30 @@
   session_start();
   require_once('../model/dbutil.php');
 
+  if(isset($_SESSION['user'])){
+    if($_SESSION['user_type'] !== 'landlord'){
+        header('Location: home.php');
+    }
+
+    if(isset($_GET['landlord']) && isset($_GET['id'])){
+        $adIds = DbUtil::getRelatedAdIds($_SESSION['user_id']);
+        $notAllowed = true;
+
+        foreach($adIds as $adId){
+            if($_GET['id'] == $adId){
+                $notAllowed = false;
+                break;
+            }
+        }
+
+        if($notAllowed){
+            header('Location: index.php');
+        }
+    }else{
+      header('Location: profile.php');
+    }
+  }else header('Location: login.php');
+
 ?>
 
 
@@ -17,7 +41,7 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
 <style>
-  /* Global styles */
+   /* Global styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -218,10 +242,14 @@ form button:hover {
 }
 
 
+
+
 </style>
 </head>
-<body>
-  <div class="container">
+<body>   
+    
+
+<div class="container">
     <h1>Student Accommodation - NSBM</h1>
      <div class="product-gallery">
      <?php
@@ -274,43 +302,54 @@ form button:hover {
     
         <label for="description">Description:</label>
         <p id="description"><?php echo $adDetail->description ?></p>
-        <p id="description"><?php echo $adDetail->description ?></p>
+        
         <?php } ?>
-
-        <?php 
-          if(isset($_SESSION['user'])&& isset($_GET['id'])){
-            $id = $_GET['id'];
-
-            if($_SESSION['user_type'] == 'student'){
-                $std_id = $_SESSION['user_id'];
-                $landlord_id = $_GET['landlord'];
-            ?>    
-            
           
 
-        <div style="text-align: right;  right: 0; bottom: 0; display: flex;">
-                <a href="../controller/studentRequestController.php?id=<?php echo $id ?>&std=<?php echo $std_id ?>&landlord=<?php echo $landlord_id ?>" style="margin-right: 5px;" class="btn btn-secondary">Request </a>
-              </div>
-            <?php
-            }elseif($_SESSION['user_type'] == 'warden'){
-                
-            ?>
 
-           <form action="../controller/postApproveController.php" method="POST">
-              <h2 style="color: black;">Reason for the rejection</h2>
-              <textarea placeholder="Add something here" id="description" name="description"></textarea>
-              <div style="text-align: right;  right: 0; bottom: 0; display: flex;">
-            <input type="text" name="id" value="<?php echo $id ?>" style="display: none;">
-               <button type="submit" name="approve" style="margin-right: 5px;" class="btn btn-secondary">Approve</button>
-                <button type="submit" name="reject" class="btn btn-secondary">Reject</button>
-            </div>
-            </form>
-        <?php }}  ?>
-        
-    </div>
+    <form>
+      <h2>Accommodation Details</h2>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Great Location" required>
+
+      <label for="beds">Beds:</label>
+      <select id="beds" name="beds" required>
+        <option value="">Select an option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <!-- Add more bed options if needed -->
+      </select>
+
+      <label for="baths">Baths:</label>
+      <select id="baths" name="baths" required>
+        <option value="">Select an option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <!-- Add more bath options if needed -->
+      </select>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="">Choose category</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+
+      <label for="contact">Contact:</label>
+      <input type="text" id="contact" name="contact" placeholder="Phone Number" required>
+
+      <label for="price">Price (Rs.):</label>
+      <input type="text" id="price" name="price" placeholder="Your Price Here" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" placeholder="Description" required></textarea>
+
+      <button type="submit">Save Changes</button>
+    </form>
+
     
-    <br><br>
-  
   
 
 
