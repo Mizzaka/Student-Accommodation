@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realvine - Choose your dream place</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <!-- custom css link -->
+  <link rel="stylesheet" href="style.css">
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"rel="stylesheet">
+</head>
+
+<body id="top">
+  
+  <!-- #HEADER -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <ion-icon name="business-outline"></ion-icon> Accommodation
+      </a>
+
+      <nav class="navbar container" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>Service</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+        
+      <a href="register.html" class="btn btn-secondary">Register</a>
+      <a href="register.html" class="btn btn-secondary">Login</a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" aria-hidden="true" class="close-icon"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <article class="article">
+
+      <!-- #HERO -->
+      <section class="section hero" aria-label="hero">
+        <div class="container">
+
+          <div class="hero-bg">
+            <div class="hero-content">
+
+              <h1 class="h1 hero-title">
+                  Accommodation  for<span class="span">NSBM</span> Student
+              </h1>
+
+              <p class="hero-text">
+                A great plateform to buy, sell and rent your properties without any agent or commisions.
+              </p>
+
+            </div>
+          </div>
+
+          
+
+        </div>
+      </section>
+
+      <!--About Section-->
+
+      <section class="about-content" id="about-section">
+        <div class="about-container">
+          <h1>About Us</h1>
+          <p>University accommodation encompasses housing options provided by universities for their students.
+             These options include shared rooms or apartments with basic furnishings and communal spaces.
+            Facilities often include kitchens, lounges, and study rooms, with amenities like internet access.
+              Some universities offer meal plans. Residential life programs and events enhance the community experience,
+              while security measures ensure safety. Costs vary, and students typically 
+              apply for accommodation during the admissions process, considering factors such as 
+              convenience and community preferences.</p>
+        </div>
+        <img src="images/about.jpg" alt="">
+      </section>
+    
+      <script>
+        // Function to handle intersection observer callback
+        function handleIntersection(entries, observer) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              observer.unobserve(entry.target);
+            }
+          });
+        }
+    
+        // Create an intersection observer
+        const observer = new IntersectionObserver(handleIntersection, {
+          threshold: 0.1 // Adjust threshold as needed
+        });
+    
+        // Target the about-content section
+        const aboutSection = document.getElementById('about-section');
+    
+        // Observe the about-content section
+        observer.observe(aboutSection);
+      </script>
+
+
+      <!--Latest Student Houses-->
+
+      <section class="property" id="property">
+        <div class="container">
+
+          <h2 class="h2 section-title">Latest Student Accommodation</h2>
+          <br>
+          <br>
+          <div class="title-new">
+            <p style="font-size: 2.5rem; color:hsl(224, 34%, 13%);  text-decoration:solid;">Latest Student Houses</p>
+            <a href="list.html" class="btn btn-secondary">See More</a>
+          </div>
+          <br>          
+          <ul class="property-list has-scrollbar">
+            <!--Card 1-->
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                  <img src="./images/222803111.jpg" width="800" height="533" loading="lazy"
+                    alt="NSBM Green University Town, Pitipana, Homagama, Sri lanka" class="img-cover">
+                </figure>
+
+                <button class="card-action-btn" aria-label="add to favourite"> 
+                  <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                </button>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="house details.html" class="card-title">NSBM Green University Town, Pitipana, Homagama, Sri lanka</a>
+                  </h3>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="bed-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">3 Beds</span>
+                    </li>
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="man-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">1 attached bathroom</span>
+                    </li>
+
+                  </ul>
+
+                  <div class="card-meta">
+
+                    <div>
+                      <span class="meta-title">Price</span>
+
+                      <span class="meta-text">Rs. 7500</span>
+                    </div>
+
+                  
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+            <!--Card 2-->
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                  <img src="./images/249878790.jpg" width="800" height="533" loading="lazy"
+                    alt="University of Plymouth, PLA 8AA" class="img-cover">
+                </figure>
+
+                <button class="card-action-btn" aria-label="add to favourite">
+                  <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                </button>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">University of Plymouth, PLA 8AA</a>
+                  </h3>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="bed-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">3 Beds</span>
+                    </li>
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="man-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">1 attached bathroom</span>
+                    </li>
+
+                  </ul>
+
+                  <div class="card-meta">
+
+                    <div>
+                      <span class="meta-title">Price</span>
+
+                      <span class="meta-text">Rs. 7000</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+            <!--Card 3-->
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                  <img src="./images/28540-1555311643-45f7e0b7-32a7-4d7d-919b-aa4ead9de309.jpg" width="800" height="533" loading="lazy"
+                    alt="175/62 jhon rodrigo mw, katubadda, moratuwa" class="img-cover">
+                </figure>
+
+                <button class="card-action-btn" aria-label="add to favourite">
+                  <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                </button>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">175/62 jhon rodrigo mw, katubadda, moratuwa</a>
+                  </h3>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="bed-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">4 Beds</span>
+                    </li>
+
+                    <li class="card-item">
+                      <div class="item-icon">
+                        <ion-icon name="man-outline"></ion-icon>
+                      </div>
+
+                      <span class="item-text">1 attached bathroom</span>
+                    </li>
+
+                  </ul>
+
+                  <div class="card-meta">
+
+                    <div>
+                      <span class="meta-title">Price</span>
+
+                      <span class="meta-text">Rs. 8000</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            
+          
+          </ul>
+        </div>
+      </section>
+      <br>
+  
+      <!-- Latest Students Flats-->
+      <br>
+      <section class="property" id="property">
+          <div class="container">
+  
+            <div class="title-new">
+              <p style="font-size: 2.5rem; color:hsl(224, 34%, 13%);  text-decoration:solid;">Latest Student Flats</p>
+              <a href="list.html" class="btn btn-secondary">See More</a>
+            </div>
+            <br>
+            <ul class="property-list has-scrollbar">
+              <!--Card 1-->
+              <li>
+                <div class="property-card">
+  
+                  <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                    <img src="./images/posada-juvenil-youth.jpg" width="800" height="533" loading="lazy"
+                      alt="45/1 Ernest Place, lakshapathiya, moratuwa" class="img-cover">
+                  </figure>
+  
+                  <button class="card-action-btn" aria-label="add to favourite">
+                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                  </button>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title">45/1 Ernest Place, lakshapathiya, moratuwa</a>
+                    </h3>
+  
+                    <ul class="card-list">
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="bed-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">2 Beds</span>
+                      </li>
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="man-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">2 attached bathroom</span>
+                      </li>
+  
+                    </ul>
+  
+                    <div class="card-meta">
+  
+                      <div>
+                        <span class="meta-title">Price</span>
+  
+                        <span class="meta-text">Rs. 6000</span>
+                      </div>
+  
+                    
+  
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <!--Card 2-->
+              <li>
+                <div class="property-card">
+  
+                  <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                    <img src="./images/p73654-The-Ultimate-Guide-to-Hostels-in-Sri-Lanka_-Discover-the-Best-Budget-Accommodation-Options-0d7489a690-681642278.jpg" width="800" height="533" loading="lazy"
+                      alt="10765 Hillshire Ave, Baton Rouge, LA 70810, USA" class="img-cover">
+                  </figure>
+  
+                  <button class="card-action-btn" aria-label="add to favourite">
+                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                  </button>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title">149 mill road katubadda, moratuwa</a>
+                    </h3>
+  
+                    <ul class="card-list">
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="bed-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">4 Beds</span>
+                      </li>
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="man-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">1 bathroom</span>
+                      </li>
+  
+                    </ul>
+  
+                    <div class="card-meta">
+  
+                      <div>
+                        <span class="meta-title">Price</span>
+  
+                        <span class="meta-text">Rs 7500</span>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </li>
+              <!--Card 3-->
+              <li>
+                <div class="property-card">
+  
+                  <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                    <img src="./images/information_items_1576495.jpg" width="800" height="533" loading="lazy"
+                      alt="171/5 sathsara mw, thalahena, malabe" class="img-cover">
+                  </figure>
+  
+                  <button class="card-action-btn" aria-label="add to favourite">
+                    <ion-icon name="heart" aria-hidden="true"></ion-icon>
+                  </button>
+  
+                  <div class="card-content">
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title">171/5 sathsara mw, thalahena, malabe</a>
+                    </h3>
+  
+                    <ul class="card-list">
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="bed-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">4 Beds</span>
+                      </li>
+  
+                      <li class="card-item">
+                        <div class="item-icon">
+                          <ion-icon name="man-outline"></ion-icon>
+                        </div>
+  
+                        <span class="item-text">1 bathroom</span>
+                      </li>
+  
+                    </ul>
+  
+                    <div class="card-meta">
+  
+                      <div>
+                        <span class="meta-title">Price</span>
+  
+                        <span class="meta-text">Rs 7000</span>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </li>
+  
+              
+            
+            </ul>
+          </div>
+        </section>
+      <!--Slider end-->
+
+
+      <!--  #SERVICE -->
+
+      <section class="section service" aria-label="service">
+        <div class="container">
+
+          <h2 class="h2 section-title">How It Works</h2>
+
+          <p class="section-text">
+            A great plateform to buy, sell and rent your properties without any agent or commisions.
+          </p>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Evaluate Property</h3>
+
+                <p class="card-text">
+                  If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="briefcase-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Meeting with Agent</h3>
+
+                <p class="card-text">
+                  If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="key"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Close the Deal</h3>
+
+                <p class="card-text">
+                  If the distribution of letters and 'words' is random, the reader will not be distracted from making.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+    </article>
+  </main>
+
+
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js" defer></script>
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
